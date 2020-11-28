@@ -1,0 +1,20 @@
+# Custom Types
+# explamation Obligatoire
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  age: Int
+}
+
+# Query
+type Query {
+  hello: String
+  users: [User!]! #User obligatoire et tableau obligatoire
+  user(id: ID!): User! #User obligatoire et tableau obligatoire
+}
+
+type Mutation {
+  createUser(id: ID!, name: String!, email: String!, age: Int): User! #attention on a spécifié qu'on voulait un retour d'infos
+  deleteUser(id: ID!): Boolean! #id obligatoire / retourne un boolean obligatoire
+}
